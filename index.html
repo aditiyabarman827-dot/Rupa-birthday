@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Rupa Didi</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+ background:radial-gradient(circle,#38240a,#080604);
+ color:#ffd875;
+ font-family:Georgia,serif;
+ text-align:center;
+ min-height:100vh;
+ overflow:hidden;
+}
+#lock{
+ min-height:100vh;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ padding:20px;
+}
+h1{
+ font-size:35px;
+ color:#ffdb79;
+ text-shadow:0 0 20px gold;
+}
+.cake{font-size:75px;margin:25px}
+button{
+ background:linear-gradient(45deg,#a66b12,#ffe49a);
+ color:#281700;
+ border:2px solid #fff0b5;
+ padding:15px 30px;
+ border-radius:30px;
+ font-size:17px;
+ font-weight:bold;
+}
+#card{display:none;padding:35px 15px}
+#card h1{font-size:34px;margin:20px}
+#card p{font-size:20px;line-height:1.8;margin:20px}
+.gold{color:#fff1ae;text-shadow:0 0 15px gold}
+.star{
+ position:fixed;
+ top:-20px;
+ animation:fall linear infinite;
+ pointer-events:none;
+}
+@keyframes fall{
+ to{transform:translateY(110vh) rotate(360deg)}
+}
+#card .cake{
+ animation:bounce 1.2s infinite alternate;
+}
+@keyframes bounce{
+ to{transform:translateY(-15px) scale(1.1)}
+}
+</style>
+</head>
+
+<body>
+
+<div id="lock">
+ <div class="cake">🎁</div>
+ <h1>Secret Birthday Surprise</h1>
+ <p style="margin:20px">A special surprise is waiting for you...</p>
+ <button onclick="openCard()">OPEN YOUR GIFT ✨</button>
+</div>
+
+<div id="card">
+ <div class="cake">🎂</div>
+ <h1>Happy Birthday</h1>
+ <h1 class="gold">Rupa Didi ❤️</h1>
+
+ <p>
+ May your life always shine like gold.<br>
+ May every dream come true.<br>
+ May happiness follow you everywhere.
+ </p>
+
+ <div style="font-size:55px">🎉 🎈 🌹</div>
+
+ <p class="gold">
+ Wishing You A Beautiful Year Ahead!
+ </p>
+
+ <p style="font-size:16px">With lots of love ❤️</p>
+ <p style="font-size:13px">Made with ❤️ just for Rupa Didi</p>
+</div>
+
+<script>
+function openCard(){
+ document.getElementById("lock").style.display="none";
+ document.getElementById("card").style.display="block";
+
+ for(let i=0;i<70;i++){
+  let s=document.createElement("div");
+  s.className="star";
+  s.innerHTML=["✨","⭐","💛","🎊","🌟"][Math.floor(Math.random()*5)];
+  s.style.left=Math.random()*100+"vw";
+  s.style.animationDuration=(3+Math.random()*5)+"s";
+  s.style.animationDelay=Math.random()*4+"s";
+  s.style.fontSize=(15+Math.random()*20)+"px";
+  document.body.appendChild(s);
+ }
+}
+</script>
+
+</body>
+   </html>
